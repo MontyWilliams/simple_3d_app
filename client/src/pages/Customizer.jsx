@@ -11,11 +11,17 @@ import { fadeAnimation, slideAnimation } from '../config/motion'
 import {CustomButton, AIPicker, ColorPicker, FilePicker, Tab} from '../components';
 
 const Customizer = () => {
-  return (
-    <AnimatePresence>
-        
-    </AnimatePresence>
-  )
+    const snap = useSnapshot(state)
+  
+    return (
+        <AnimatePresence>
+            {!snap.intro && (
+                <>
+                    Costumizer
+                </>
+            )}
+        </AnimatePresence>
+    )
 }
 
 export default Customizer
