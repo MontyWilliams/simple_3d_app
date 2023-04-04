@@ -31,7 +31,12 @@ const Home = () => {
             <p className="max-w-md font-normal text-gray-600 text-base">
               Create a 3d animated shirt bor bro. <strong>Also get your A.I. on</strong>
             </p>
-            <CustomButton />
+            <CustomButton
+              type="filled"
+              title="Customize It"
+              handleClick={() => state.intro = false}
+              customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+            />
           </motion.div>
 
         </motion.section>
