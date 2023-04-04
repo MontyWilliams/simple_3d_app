@@ -31,6 +31,7 @@ const Home = () => {
             <p className="max-w-md font-normal text-gray-600 text-base">
               Create a 3d animated shirt bor bro. <strong>Also get your A.I. on</strong>
             </p>
+            <CustomButton />
           </motion.div>
 
         </motion.section>
