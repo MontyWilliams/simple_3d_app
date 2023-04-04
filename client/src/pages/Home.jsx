@@ -27,7 +27,11 @@ const Home = () => {
             </motion.div>
           </motion.div>
 
-       
+          <motion.div {...headContentAnimation} className="flex flex-col gap-5">
+            <p className="max-w-md font-normal text-gray-600 text-base">
+              Create a 3d animated shirt bor bro. <strong>Also get your A.I. on</strong>
+            </p>
+          </motion.div>
 
         </motion.section>
       )}
