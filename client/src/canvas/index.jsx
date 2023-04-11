@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { Enviornment, Center } from '@react-three/drei'
+import { Environment, Center } from '@react-three/drei'
 
 import Shirt from './Shirt'
 import Backdrop from './Backdrop'
@@ -7,9 +7,12 @@ import CameraRig from './CameraRig'
 
 const CanvasModel = () => {
   return (
-    <Canvas>
+    <Canvas
+        shadows
+        camera={{position: [0, 0, 0], fov:25}}
+    >
         <ambientLight  intensity={0.5}/>
-        <Enviornment preset="city" />
+        <Environment preset="city" />
         <CameraRig>
             <Backdrop />
             <Center>
