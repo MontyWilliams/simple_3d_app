@@ -24,7 +24,7 @@ function Backdrop() {
         position={[5, 5, -10]}
         /> 
         <RandomizedLight
-        amount={1}
+        amount={1.95}
         radius={9}
         intensity={0.55}
         ambient={0.25}
