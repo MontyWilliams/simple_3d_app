@@ -40,10 +40,18 @@ const Customizer = () => {
         }
       }
 
+      const handleDecals = (type, result) => {
+        const decalType = DecalTypes[type]
+
+        state[decalType.stateProperty] = result;
+        
+      }
+
       const readFile = (type) => {
         reader(file)
         .then((result) => {
-            
+            handleDecals(type, result);
+            setActiveEditorTab("");
         })
       }
   
