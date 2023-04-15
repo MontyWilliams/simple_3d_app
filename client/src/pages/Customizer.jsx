@@ -39,7 +39,13 @@ const Customizer = () => {
             return null;
         }
       }
-    
+
+      const readFile = (type) => {
+        reader(file)
+        .then((result) => {
+            
+        })
+      }
   
     return (
         <AnimatePresence>
