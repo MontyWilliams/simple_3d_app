@@ -41,34 +41,45 @@ const Customizer = () => {
       }
 
       const handleDecals = (type, result) => {
-        const decalType = DecalTypes[type]
-
+        const decalType = DecalTypes[type];
+    
         state[decalType.stateProperty] = result;
-        
+    
         if(!activeFilterTab[decalType.filterTab]) {
-            handleActiveFilterTab(decalType.filterTab)
+          handleActiveFilterTab(decalType.filterTab)
         }
       }
-
-      const handleActiveFilterTab =  (tabName) => {
+    
+      const handleActiveFilterTab = (tabName) => {
         switch (tabName) {
-            case "logoShirt":
-                state.isLogoTexture = !activeFilterTab[tabName];
-        break;
-            case "stylishShirt":
-                state.isFullTexture = !activeFilterTab[tabName];
-        default:
+          case "logoShirt":
+              state.isLogoTexture = !activeFilterTab[tabName];
+            break;
+          case "stylishShirt":
+              state.isFullTexture = !activeFilterTab[tabName];
+            break;
+          default:
             state.isLogoTexture = true;
-            state.isFullTexture = true;
+            state.isFullTexture = false;
+            break;
         }
+    
+        // after setting the state, activeFilterTab is updated
+    
+        setActiveFilterTab((prevState) => {
+          return {
+            ...prevState,
+            [tabName]: !prevState[tabName]
+          }
+        })
       }
-
+    
       const readFile = (type) => {
         reader(file)
-        .then((result) => {
+          .then((result) => {
             handleDecals(type, result);
             setActiveEditorTab("");
-        })
+          })
       }
   
     return (
@@ -103,7 +114,7 @@ const Customizer = () => {
 								key={tab.name}
 								tab={tab}
 								isFilterTab
-								isActiveTab=""
+								isActiveTab={activeFilterTab[tab.name]}
 								handleClick={() => {handleActiveFilterTab(tab.name)}}
 							/>
 						))}
