@@ -50,6 +50,10 @@ const Customizer = () => {
         }
       }
 
+      const handleActiveFilterTab =  (tabName) => {
+        
+      }
+
       const readFile = (type) => {
         reader(file)
         .then((result) => {
