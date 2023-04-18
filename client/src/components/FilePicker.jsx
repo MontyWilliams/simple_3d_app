@@ -14,6 +14,10 @@ function FilePicker({ file, setFile, readFile }) {
       <label htmlFor="file-upload" className="filepicker-label">
         Uplad File
       </label>
+      <p className="mt-2 text-gray-500 text-xs truncate">
+        {file === '' ? "Pick a file " : file.name}
+      </p>
+
       </div>  
     </div>
   )
