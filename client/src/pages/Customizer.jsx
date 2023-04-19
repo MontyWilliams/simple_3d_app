@@ -46,6 +46,10 @@ const Customizer = () => {
         }
       }
 
+      const handleSubmit = async (type) => {
+        if(!prompt) return aler("You gotta give it a prompt Bruh");
+      }
+
       const handleDecals = (type, result) => {
         const decalType = DecalTypes[type];
     
