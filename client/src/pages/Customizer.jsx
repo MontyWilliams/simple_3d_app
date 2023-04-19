@@ -48,6 +48,15 @@ const Customizer = () => {
 
       const handleSubmit = async (type) => {
         if(!prompt) return aler("You gotta give it a prompt Bruh");
+
+        try {
+
+        } catch (error) {
+          alert(error)
+        } finally {
+          setGeneratingImg(false)
+          setActiveEditorTab("")
+        }
       }
 
       const handleDecals = (type, result) => {
