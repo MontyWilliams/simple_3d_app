@@ -13,7 +13,7 @@ function Tab({ tab, isFilterTab, isActiveTab, handleClick}) {
   return (
     <div
       key={tab.name}
-      className={`tab-btn ${isFilterTab ?  'tounded-full glassmorhism' : 'rounded-4' }`}
+      className={`tab-btn ${isFilterTab ?  'rounded-full glassmorhism' : 'rounded-4' }`}
       onClick={handleClick}
       style={activeStyles}
     >
