@@ -33,10 +33,14 @@ const Customizer = () => {
                 file={file}
                 setFile={setFile}
                 readFile={readFile}
-
             />
           case "aipicker":
-            return <AIPicker />
+            return <AIPicker
+              prompt={prompt}
+              setPrompt={setPrompt}
+              generateingImg={generatingImg}
+              handleSubmit={handleSubmit}
+            />
           default:
             return null;
         }
@@ -77,7 +81,7 @@ const Customizer = () => {
       }
     
       const readFile = (type) => {
-        reader(file)
+        reader(file) 
           .then((result) => {
             handleDecals(type, result);
             setActiveEditorTab("");
