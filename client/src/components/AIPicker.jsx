@@ -13,6 +13,31 @@ function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
+      <div className="flex flex-wrap gap-5">
+        {generatingImg ? (
+          <CustomButton
+            type="outline"
+            title="Asking AI..."
+            customStyles="text-xs"
+          />
+        ) : (
+          <>
+            <CustomButton
+              type="outline"
+              title="AI logo"
+              handleClick={() => handleSubmit('logo')}
+              customStyles="text-xs"
+            />
+
+            <CustomButton
+              type="filled"
+              title="AI Full"
+              handleClick={() => handleSubmit('full')}
+              customStyles="text-xs"
+            />
+          </>
+        )}
+      </div>
 
     </div>
   )
