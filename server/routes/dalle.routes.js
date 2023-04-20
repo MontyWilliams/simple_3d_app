@@ -17,4 +17,17 @@ router.route('/').get((req, res ) => {
     res.status(200).json({ message: "Yo Yo Yo Mfer"})
 })
 
+router.route('/').post(async (req, res) => {
+    try {
+        const { prompt } = req.body;
+
+        const response = await openai.createImage({
+            prompt,
+            n: 1,
+            size: '1024x1024',
+            response_format: 'b64_json'
+        })
+    }
+})
+
 export default router
