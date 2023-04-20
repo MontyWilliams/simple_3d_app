@@ -47,9 +47,20 @@ const Customizer = () => {
       }
 
       const handleSubmit = async (type) => {
-        if(!prompt) return aler("You gotta give it a prompt Bruh");
+        if(!prompt) return alert("You gotta give it a prompt Bruh");
 
         try {
+          setGeneratingImg(true);
+
+          const response = await fetch('localhost:8080/api/v1/dalle', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            bosy: JSON.stringify({
+              prompt,
+            })
+          })
 
         } catch (error) {
           alert(error)
