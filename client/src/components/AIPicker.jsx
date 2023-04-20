@@ -1,8 +1,14 @@
 import React from 'react'
 
-function AIPicker() {
+import CustomButton from './CustomButton.jsx';
+
+
+function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
   return (
-    <div>AIPicker</div>
+    <div className="aipicker-container">
+      
+
+    </div>
   )
 }
 
